@@ -22,9 +22,14 @@
     function NarrowItDownDirectiveController(){
       var list=this;
       list.ItemsInList=function(){
-        if (list.items == undefined || list.items.length ==0) {
-           return true;
-         }
+        if (list.items == undefined){
+          return false;
+        } else {
+          if (list.items.length ==0) {
+             return true;
+           }
+        }
+
           return false;
       };
     }
@@ -63,14 +68,17 @@
                var menuitems=response.data.menu_items;
                 var foundItems=[];
                 //console.log(searchTerm);
-                for (var k in menuitems){
-                  var desc=menuitems[k].description;
+                if (searchTerm !== ""){
+                  for (var k in menuitems){
+                    var desc=menuitems[k].description;
 
-                  if (desc.toLowerCase().indexOf(searchTerm) !== -1){
-                    foundItems.push(menuitems[k]);
-                  //  console.log(desc);
+                    if (desc.toLowerCase().indexOf(searchTerm) !== -1){
+                      foundItems.push(menuitems[k]);
+                    //  console.log(desc);
+                    }
                   }
                 }
+
                 return foundItems;
              });
           };
