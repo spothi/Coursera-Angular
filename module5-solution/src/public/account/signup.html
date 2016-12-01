@@ -1,0 +1,181 @@
+<link rel="stylesheet" href="css/signup.css">
+<div class="container">
+  <form name='signupForm' novalidate>
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="firstname" placeholder="First Name"
+           ng-model="signupCtrl.user.firstname"
+           required>
+          
+      </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.firstname.$error.required) && signupForm.firstname.$touched">
+          First Name is required
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="lastname" placeholder="Last Name"
+           ng-model="signupCtrl.user.lastname"
+           required>
+      </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.lastname.$error.required) && signupForm.lastname.$touched">
+          Last Name is required
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+               <input type="email" name="email" placeholder="Email"
+                 ng-model="signupCtrl.user.email"
+                 required>
+
+      </div>
+      <div class="col-md-8">
+        <span ng-if="signupForm.email.$invalid && signupForm.email.$touched">
+          Must be a valid email address: handle@domain format
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="address1" placeholder="Address 1"
+           ng-model="signupCtrl.user.address1"
+           required>
+        </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.address1.$error.required) && signupForm.address1.$touched">
+          Address 1 is required
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="address2" placeholder="Address 2"
+           ng-model="signupCtrl.user.address2"
+           >
+
+      </div>
+      <div class="col-md-8">
+        <!-- <span
+          ng-if="(signupForm.address2.$error.required) && signupForm.address2.$touched">
+          Address 2 is required
+        </span> -->
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="city" placeholder="City"
+           ng-model="signupCtrl.user.city"
+           required>
+      </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.city.$error.required) && signupForm.city.$touched">
+          City is required
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="state" placeholder="state"
+           ng-model="signupCtrl.user.state"
+           required>
+      </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.state.$error.required) && signupForm.state.$touched">
+          State is required
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+        <input type="text" name="zip" placeholder="Zip Code"
+           ng-model="signupCtrl.user.zip"
+           required
+           pattern="(\d{5})">
+
+      </div>
+      <div class="col-md-8">
+        <span
+          ng-if="(signupForm.zip.$error.required || signupForm.zip.$invalid ) && signupForm.zip.$touched">
+          zip must contain 5 digit code
+        </span>
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+
+         <input type="text" name="phone" placeholder="Phone ##########"
+           ng-model="signupCtrl.user.phone"
+           pattern="(\d{3})(\d{3})(\d{4})"
+           required>
+
+      </div>
+      <div class="col-md-8">
+        <span ng-if="signupForm.phone.$error.required && signupForm.phone.$touched">
+          Phone number is required
+        </span>
+        <br>
+        <span ng-if="signupForm.phone.$invalid && signupForm.phone.$touched">
+            Phone must be in the format ###-###-####.
+        </span>
+        <br>
+
+        <br>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4">
+
+         <input type="text" name="menuNum" placeholder="Menu number of Favourite Dish"
+           ng-model="signupCtrl.user.menuNum"
+           required>
+
+      </div>
+      <div class="col-md-8">
+        <span ng-if="signupForm.menuNum.$error.required && signupForm.menuNum.$touched">
+          Menu number is required
+        </span>
+        <br>
+        <br>
+
+        <br>
+      </div>
+    </div>
+  <div class="row">
+    <div class="col-md-5">
+      {{signupCtrl.Message}}
+    </div>
+  </div>
+
+
+
+       <button
+         ng-disabled="signupForm.$invalid"
+         ng-click="signupCtrl.submit()">Submit</button>
+   </form>
+</div>

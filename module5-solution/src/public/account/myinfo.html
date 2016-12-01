@@ -1,0 +1,26 @@
+<div class="container">
+<div ng-if="myInfoCtrl.firstname">
+  {{myInfoCtrl.firstname}}
+  {{myInfoCtrl.lastname}}<br>
+  {{myInfoCtrl.address1}}<br>
+  {{myInfoCtrl.address2}}<br>
+  {{myInfoCtrl.city}}<br>
+  {{myInfoCtrl.state}}<br>
+  {{myInfoCtrl.zip}}<br>
+  {{myInfoCtrl.email}}<br>
+  {{myInfoCtrl.phone}}<br>
+
+    Favourite Dish category : {{myInfoCtrl.category}}
+
+    <div class="category-tile">
+      <img width="200" height="200" ng-src="{{myInfoCtrl.basePath}}/images/{{myInfoCtrl.categoryInfo.short_name}}.jpg" alt="{{myInfoCtrl.categoryInfo.name}}">
+      <span>{{myInfoCtrl.categoryInfo.name}}</span>
+
+    </div>
+    <span>{{myInfoCtrl.categoryInfo.description}}</span>
+</div>
+<div ng-if="!myInfoCtrl.firstname">
+  Not signed up Yet. <a ui-sref="public.signup"> Sign up Now!</a>
+
+</div>
+</div>
