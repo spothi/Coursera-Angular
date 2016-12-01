@@ -8,7 +8,7 @@
  signupController.$inject=['signupService']
   function signupController(signupService){
     var signupCtrl = this;
-   signupCtrl.Message="";
+    signupCtrl.Message="Please fill out all fields to submit the form";
     signupCtrl.submit = function () {
       signupCtrl.completed = true;
       signupService.saveuserinfo(signupCtrl.user.menuNum
