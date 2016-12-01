@@ -6,7 +6,7 @@
         <input type="text" name="firstname" placeholder="First Name"
            ng-model="signupCtrl.user.firstname"
            required>
-          
+
       </div>
       <div class="col-md-8">
         <span
@@ -167,7 +167,7 @@
       </div>
     </div>
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-5" ng-if="!signupCtrl.Message">
       {{signupCtrl.Message}}
     </div>
   </div>
